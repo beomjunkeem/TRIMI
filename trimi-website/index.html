@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="TRIMI, a Tri-Modal Manipulation Interface for Direct Demonstration, Joint-Level Haptic Teleoperation, and Robotic Execution."
+    />
+    <title>TRIMI</title>
+    <link rel="icon" href="data/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&amp;family=Open+Sans:wght@400;500;600&amp;family=Varela+Round&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-background" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="TRIMI home">
+          <img class="brand-icon" src="data/favicon.svg" alt="" aria-hidden="true" />
+          TRIMI
+        </a>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="hero section" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Tri-modal manipulation interface</p>
+          <h1 id="hero-title" class="hero-title">TRIMI</h1>
+          <p class="hero-subtitle">
+            A Tri-Modal Manipulation Interface for Direct Demonstration, Joint-Level Haptic Teleoperation, and Robotic
+            Execution.
+          </p>
+          <p class="hero-summary-line">
+            One interface for collecting human demonstrations, teleoperating a robot hand with joint-level haptic
+            feedback, and executing on the robot.
+          </p>
+          <p class="authors placeholder-text">Authors coming soon</p>
+
+          <div class="hero-actions" role="navigation" aria-label="Primary project links">
+            <a class="btn primary" href="#" title="Coming soon" aria-label="TRIMI paper (coming soon)">
+              <span class="btn-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M6 2.8h8.3L18 6.5v14.7H6z" />
+                  <path d="M14.3 2.8v3.7H18" />
+                  <path d="M8.8 11h6.4M8.8 14h6.4M8.8 17h4.6" />
+                </svg>
+              </span>
+              Paper
+            </a>
+            <a class="btn" href="#" title="Coming soon" aria-label="TRIMI code (coming soon)">
+              <span class="btn-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.4a9.8 9.8 0 0 0-3.1 19.1c.5.1.7-.2.7-.5v-1.8c-2.7.6-3.3-1.1-3.3-1.1-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.5 2.3 1.1 2.9.8.1-.7.3-1.1.6-1.4-2.2-.2-4.4-1.1-4.4-4.8 0-1.1.4-1.9 1-2.6-.1-.2-.4-1.2.1-2.5 0 0 .8-.3 2.6 1a9.2 9.2 0 0 1 4.7 0c1.8-1.3 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7 1 1.5 1 2.6 0 3.7-2.2 4.5-4.4 4.8.4.3.7.9.7 1.9V21c0 .3.2.6.7.5A9.8 9.8 0 0 0 12 2.4z"
+                  />
+                </svg>
+              </span>
+              Code
+            </a>
+            <a class="btn" href="#modes">Modes</a>
+          </div>
+        </div>
+
+        <div
+          class="hero-media hero-viewer"
+          data-hero-model="data/cad/trimi_assembly.glb"
+          data-hero-wire-mode="edges"
+          data-hero-edge-angle="30"
+          data-hero-zoom="1.42"
+          aria-label="Rotating wireframe render of the TRIMI assembly"
+        >
+          <canvas class="hero-canvas"></canvas>
+          <noscript>
+            <p class="hero-noscript">Enable JavaScript to view the TRIMI render.</p>
+          </noscript>
+        </div>
+      </section>
+
+      <section id="modes" class="section">
+        <div class="section-heading">
+          <h2 class="section-title">Three Modes, One Interface</h2>
+        </div>
+        <div class="directory-grid mode-grid">
+          <article class="directory-card">
+            <span class="release-index">01</span>
+            <h3>Direct Demonstration</h3>
+            <p>The operator manipulates objects through the interface by hand to record demonstrations directly.</p>
+          </article>
+          <article class="directory-card">
+            <span class="release-index">02</span>
+            <h3>Joint-Level Haptic Teleoperation</h3>
+            <p>The same device teleoperates the robot joint by joint, with haptic feedback returned to the operator.</p>
+          </article>
+          <article class="directory-card">
+            <span class="release-index">03</span>
+            <h3>Robotic Execution</h3>
+            <p>The robot executes manipulation on its own using the same interface hardware.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="trailer" class="section">
+        <div class="section-heading">
+          <h2 class="section-title">Full System Overview</h2>
+        </div>
+        <div class="trailer-video demo-frame demo-frame-large">
+          <span class="play-marker" aria-hidden="true"></span>
+          <div>
+            <strong>Video coming soon</strong>
+            <span>Overview of the interface across demonstration, teleoperation, and execution.</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="hero-viewer.js"></script>
+  </body>
+</html>

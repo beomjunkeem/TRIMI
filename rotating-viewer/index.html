@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Big Assembly Viewer</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer@4.0.0/dist/model-viewer.min.js"></script>
+    <style>
+      :root {
+        --bg: #fdfaf4;
+        --border: #ccc;
+        --text-soft: #6b6b6b;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: system-ui, sans-serif;
+        background-color: var(--bg);
+        background-image:
+          radial-gradient(circle at 10% 0%, rgba(232, 232, 232, 0.26) 0, rgba(232, 232, 232, 0) 36%),
+          radial-gradient(circle at 90% 15%, rgba(240, 232, 231, 0.34) 0, rgba(240, 232, 231, 0) 38%);
+      }
+
+      /* Same frame as dexexo-research.github.io: 90% width, 2:1, dashed rounded border, soft gradient. */
+      .viewer-frame {
+        width: 90%;
+        aspect-ratio: 16 / 8;
+      }
+
+      model-viewer {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 2px dashed var(--border);
+        border-radius: 12px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(240, 232, 231, 0.7)),
+          radial-gradient(circle at 15% 15%, rgba(33, 150, 243, 0.09), rgba(33, 150, 243, 0) 40%);
+      }
+
+      /* Record mode: viewer fills a fixed 16:9 viewport, no border. */
+      body.recording .viewer-frame {
+        position: fixed;
+        top: 0;
+        left: 0;
+        aspect-ratio: auto; /* exact size set by record.js */
+      }
+
+      body.recording model-viewer {
+        border: 0;
+        border-radius: 0;
+      }
+
+      #status {
+        position: fixed;
+        left: 16px;
+        bottom: 12px;
+        color: var(--text-soft);
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="viewer-frame">
+      <model-viewer
+        id="viewer"
+        src="data/model.glb"
+        alt="Rotating 3D model of the assembly"
+        camera-controls
+        auto-rotate
+        auto-rotate-delay="1200"
+        rotation-per-second="12deg"
+        shadow-intensity="0"
+        exposure="0.33"
+        environment-image="neutral"
+        interaction-prompt="auto"
+        loading="eager"
+      ></model-viewer>
+    </div>
+    <div id="status"></div>
+
+    <script type="module" src="record.js"></script>
+  </body>
+</html>

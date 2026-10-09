@@ -1,0 +1,6 @@
+# Template sources (not part of this repo)
+midas_hand_website_dev-main/
+midas-hand-org.github.io-main/
+
+.DS_Store
+__pycache__/
