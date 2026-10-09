@@ -11,6 +11,7 @@ if (params.has("record")) {
   const radPerFrame = (degPerSecond * Math.PI) / 180 / fps;
 
   const mv = document.getElementById("viewer");
+  if (params.get("src")) mv.src = params.get("src");
   const status = document.getElementById("status");
   document.body.classList.add("recording");
   const frame = document.querySelector(".viewer-frame");

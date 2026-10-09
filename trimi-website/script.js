@@ -430,3 +430,11 @@ document.addEventListener("keydown", (event) => {
     closeLicenseModal();
   }
 });
+
+document.querySelectorAll(".hero-render model-viewer").forEach((viewer) => {
+  viewer.addEventListener("load", () => {
+    // Start the turntable at 150deg (the 12.5 s frame of rotation_4k.mp4); auto-rotate continues from here.
+    viewer.resetTurntableRotation((150 * Math.PI) / 180);
+    viewer.classList.add("is-loaded");
+  }, { once: true });
+});

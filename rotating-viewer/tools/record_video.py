@@ -22,6 +22,7 @@ parser.add_argument("--width", type=int, default=3840)
 parser.add_argument("--height", type=int, default=2160)
 parser.add_argument("--out", default=os.path.join(ROOT, "rotation_4k.mp4"))
 parser.add_argument("--first-frame", help="also save frame 0 as a PNG here")
+parser.add_argument("--src", help="model to load instead of data/model.glb (path relative to the page)")
 parser.add_argument("--port", type=int, default=8765)
 args = parser.parse_args()
 
@@ -70,6 +71,7 @@ scale = 2
 url = (
     f"http://127.0.0.1:{args.port}/index.html?record&fps={args.fps}"
     f"&seconds={args.seconds}&speed={args.speed}&w={args.width // scale}&h={args.height // scale}"
+    + (f"&src={args.src}" if args.src else "")
 )
 profile = tempfile.mkdtemp(prefix="chrome-record-")
 chrome = subprocess.Popen(

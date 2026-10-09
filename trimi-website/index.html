@@ -69,15 +69,23 @@
           </div>
         </div>
 
-        <div
-          class="hero-media hero-viewer"
-          data-hero-model="data/cad/trimi_assembly.glb"
-          data-hero-wire-mode="edges"
-          data-hero-edge-angle="30"
-          data-hero-zoom="1.42"
-          aria-label="Rotating wireframe render of the TRIMI assembly"
-        >
-          <canvas class="hero-canvas"></canvas>
+        <div class="hero-media hero-render">
+          <!-- Same model, environment and turntable settings as rotating-viewer/rotation_4k.mp4 -->
+          <model-viewer
+            src="data/cad/trimi_render.glb"
+            alt="Rotating 3D render of the TRIMI assembly"
+            camera-controls
+            disable-zoom
+            disable-pan
+            auto-rotate
+            auto-rotate-delay="1200"
+            rotation-per-second="12deg"
+            shadow-intensity="0"
+            exposure="1"
+            environment-image="data/env/retail_store.hdr"
+            interaction-prompt="none"
+            loading="eager"
+          ></model-viewer>
           <noscript>
             <p class="hero-noscript">Enable JavaScript to view the TRIMI render.</p>
           </noscript>
@@ -122,14 +130,6 @@
     </main>
 
     <script src="script.js"></script>
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
-        }
-      }
-    </script>
-    <script type="module" src="hero-viewer.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer@4.0.0/dist/model-viewer.min.js"></script>
   </body>
 </html>
